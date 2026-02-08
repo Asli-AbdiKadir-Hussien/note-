@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Purple Task App</title>
+    <style>
+        /* Halkaan ku dhex qor code-ka CSS-ka oo dhan */
+        body {
+            background-color: #f3e5f5;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h2 { color: #6a1b9a; }
+        button { background: #9c27b0; color: white; border: none; padding: 10px; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>My Task List</h2>
+        <input type="text" id="taskInput" placeholder="Add a task...">
+        <button onclick="addTask()">Add</button>
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        // Halkaan ku dhex qor JavaScript-ka
+        function addTask() {
+            let input = document.getElementById('taskInput');
+            let list = document.getElementById('taskList');
+            if(input.value !== "") {
+                let li = document.createElement('li');
+                li.textContent = input.value;
+                list.appendChild(li);
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
